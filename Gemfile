@@ -13,7 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+#Custom gems
 gem 'devise'
+gem 'bootstrap-sass'
+
 ####This gem is required for windows
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
@@ -51,4 +54,8 @@ group :development do
   gem 'quiet_assets'
   gem "rails_best_practices"
   gem 'rack-mini-profiler'
+end
+
+source 'http://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
 end
