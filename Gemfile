@@ -16,6 +16,8 @@ gem 'therubyracer', platforms: :ruby
 #Custom gems
 gem 'devise'
 gem 'bootstrap-sass'
+gem "breadcrumbs_on_rails"
+gem 'will_paginate', '~> 3.0.6'
 
 ####This gem is required for windows
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
