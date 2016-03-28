@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Topics</h1>
+
+<table id="topics" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </tfoot>
+
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= topic.get_category %></td>
+        <td><%= topic.name %></td>
+        <td>
+            <%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-primary"  %>
+            <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'New Topic', new_topic_path %>
+<script>
+  $(document).ready(function() {
+    $('#topics').DataTable();
+  });
+
+</script>

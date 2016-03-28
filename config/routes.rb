@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :topics, except: [:show]
   resources :categories, except: [:show]
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
