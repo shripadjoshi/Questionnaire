@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     category_breadcrums({})
-    @categories = Category.paginate(:page => params[:page], :per_page => 10)
+    @categories = Category.all#.paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /categories/1
