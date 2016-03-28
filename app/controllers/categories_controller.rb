@@ -11,12 +11,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all#.paginate(:page => params[:page], :per_page => 2)
   end
 
-  # GET /categories/1
-  # GET /categories/1.json
-  def show
-    category_breadcrums({"display_text": "Show Category"})
-  end
-
   # GET /categories/new
   def new
     category_breadcrums({"display_text": "New Category"})
@@ -36,8 +30,8 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
+        format.html { redirect_to categories_url, notice: 'Category was successfully created.' }
+        format.json { render :index, status: :created, location: @category }
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -51,7 +45,7 @@ class CategoriesController < ApplicationController
     category_breadcrums({"display_text": "Update Category"})
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to categories_url, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
