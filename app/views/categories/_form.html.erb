@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name %>*<br>
+    <%= f.text_field :name, required: true %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
