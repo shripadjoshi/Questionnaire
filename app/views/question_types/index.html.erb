@@ -1,0 +1,37 @@
+<h1>Listing Question Types</h1>
+
+<table id="question_types" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @question_types.each do |question_type| %>
+      <tr>
+        <td><%= question_type.name %></td>
+        <td>
+            <%= link_to 'Edit', edit_question_type_path(question_type), class: "btn btn-primary" %>
+            <%= link_to 'Destroy', question_type, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question type', new_question_type_path %>
+<script>
+  $(document).ready(function() {
+    $('#categories').DataTable();
+  });
+
+</script>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :question_types, except: [:show]
   resources :topics, except: [:show]
   resources :categories, except: [:show]
   devise_for :users
